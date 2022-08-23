@@ -9,10 +9,17 @@ public class DragAndDrop : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip pickUpSound, dropSound;
-    [SerializeField]
     private Camera mainCamera;
     private Vector2 offset;
     private Vector2 OrgPos;
+    [SerializeField]
+    private GameObject ett;
+    [SerializeField]
+    private GameObject tva;
+    [SerializeField]
+    private GameObject tre;
+
+
 
     private void Awake()
     {
@@ -22,6 +29,7 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
+
     }
 
 
@@ -47,16 +55,21 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        transform.position = OrgPos;
-        dragging = false;
-        audioSource.PlayOneShot(dropSound);
+
+        if (Vector2.Distance(transform.position, ett.transform.position) < 3)
+        {
+            Debug.Log("HALLÅ");
+            transform.position = ett.transform.position;
+        }
+       
+            transform.position = OrgPos;
+            dragging = false;
+            audioSource.PlayOneShot(dropSound);
+       
     }
 
     Vector2 GetMousePos ()
     {
         return mainCamera.ScreenToWorldPoint(Input.mousePosition); 
     }
-
-
-
 }
