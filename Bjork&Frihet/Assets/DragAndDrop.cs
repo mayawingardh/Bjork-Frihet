@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private bool dragging;
+    private bool dragging, placed;
+
     [SerializeField] 
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip pickUpSound, dropSound;
+
     private Camera mainCamera;
     private Vector2 offset;
     private Vector2 OrgPos;
+
     [SerializeField]
     private GameObject ett;
     [SerializeField]
     private GameObject tva;
     [SerializeField]
     private GameObject tre;
-
 
 
     private void Awake()
@@ -29,12 +31,15 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
-
     }
-
 
     private void Update()
     {
+        if (placed)
+        {
+            return;
+        }
+
         if(!dragging)
         {
             return;
@@ -58,15 +63,18 @@ public class DragAndDrop : MonoBehaviour
 
         if (Vector2.Distance(transform.position, ett.transform.position) < 3)
         {
-            Debug.Log("HALLÅ");
             transform.position = ett.transform.position;
+            placed = true;
         }
-       
+        else
+        {
             transform.position = OrgPos;
             dragging = false;
             audioSource.PlayOneShot(dropSound);
-       
+        }  
     }
+
+    //todo. OLIKA KLADER OLIKA POANG, KAN BARA SATTAS PÅ VISSA STALLEN
 
     Vector2 GetMousePos ()
     {
