@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DragAndDrop : MonoBehaviour
 {
+    public event Action IsPlaced = delegate { };
+
+
     private bool dragging, placed;
 
     [SerializeField] 
@@ -65,6 +69,7 @@ public class DragAndDrop : MonoBehaviour
         {
             transform.position = ett.transform.position;
             placed = true;
+            IsPlaced.Invoke();
         }
         else
         {
