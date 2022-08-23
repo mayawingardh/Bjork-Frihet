@@ -11,4 +11,14 @@ public class NewBehaviourScript : MonoBehaviour
     {
         m_Object.text = "Text Bubble";
     }
+
+    void CloseTextBubble()
+    {
+        m_Object.text = "";
+    }
+
+    private void Update()
+    {
+        
+    }
 }
