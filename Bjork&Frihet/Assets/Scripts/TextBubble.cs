@@ -17,6 +17,11 @@ public class TextBubble : MonoBehaviour
         m_Object.text = "";
     }
 
+    public void ClickTextBubble()
+    {
+        m_Object.text = "Test if close icon stays in correct position";
+    }
+
     private void Update()
     {
         
