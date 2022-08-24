@@ -1,0 +1,41 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Stone Sans;
+}
+@font-face {
+  font-family: Stone Sans;
+  src: url(/assets/fonts/Stone\ Sans\ Bold.ttf);
+}
+
+/* .navbar {
+  overflow: hidden;
+  width: 100vw;
+  float: right;
+} */
+#navbar ul {
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+  text-align: left;
+  background-color: #fff;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  padding: 0.2em 1em;
+  color: #000;
+  background-color: #fff;
+}
+#navbar ul li img {
+  width: 20rem;
+  height: auto;
+}
+
+#navbar ul li a:hover {
+  text-decoration: solid;
+}
