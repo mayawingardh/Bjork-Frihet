@@ -6,6 +6,9 @@ using TMPro;
 public class TextBubble : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_Object;
+    [SerializeField] GameObject textBubbleButton;
+    [SerializeField] GameObject closeButton;
+
 
     void Start()
     {
@@ -14,7 +17,8 @@ public class TextBubble : MonoBehaviour
 
     public void CloseTextBubble()
     {
-        m_Object.text = "";
+        textBubbleButton.SetActive(false);
+        closeButton.SetActive(false);
     }
 
     public void ClickTextBubble()
