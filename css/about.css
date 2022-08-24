@@ -1,0 +1,18 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 20rem);
+  grid-template-rows: repeat(3, 20rem);
+  grid-gap: 50px 30px;
+}
+
+.grid-item {
+  border: thin gray solid;
+  padding: 10px;
+}
+
+.grid-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+}
