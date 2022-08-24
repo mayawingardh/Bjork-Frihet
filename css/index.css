@@ -2,23 +2,20 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: Stone Sans;
+  background-color: #fcfcfc;
 }
 @font-face {
   font-family: Stone Sans;
   src: url(/assets/fonts/Stone\ Sans\ Bold.ttf);
 }
-
-/* .navbar {
-  overflow: hidden;
-  width: 100vw;
-  float: right;
-} */
+#navbar {
+  padding-top: 1.5rem;
+}
 #navbar ul {
   margin: 0;
   padding: 5px;
   list-style-type: none;
   text-align: left;
-  background-color: #fff;
 }
 
 #navbar ul li {
@@ -29,7 +26,6 @@ body {
   text-decoration: none;
   padding: 0.2em 1em;
   color: #000;
-  background-color: #fff;
 }
 #navbar ul li img {
   width: 20rem;
@@ -38,4 +34,17 @@ body {
 
 #navbar ul li a:hover {
   text-decoration: solid;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+.mainimg {
+  align-self: center;
+  width: 30vw;
+  height: auto;
 }
